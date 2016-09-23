@@ -8,7 +8,7 @@
 
 
 	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
-	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+	<!--<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>-->
 
 	<link href='fullcalendar-3.0.0/fullcalendar.css' rel='stylesheet' />
 	<script src='fullcalendar-3.0.0/lib/moment.min.js'></script>
@@ -23,6 +23,9 @@
 		$("div#day").text(m.format("dddd"));
 
 		$("div#calendar-date").text(m.format("MMMM D, Y"));
+
+		// todo change to png
+		$("img.staff").attr("src", "people/" + m.day() + ".jpg");
 
 		/* === CALENDAR SETUP === */
 		$('#calendar').fullCalendar({
@@ -65,11 +68,11 @@
 	    });
 	});
 
-	var CLIENT_ID = '959383443998-6d6tefpu9jsge7j1d5s8qpvfgj0k2jfl.apps.googleusercontent.com';
+	/*var CLIENT_ID = '959383443998-6d6tefpu9jsge7j1d5s8qpvfgj0k2jfl.apps.googleusercontent.com';
 	var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 
 
-	/* === SLIDESHOW SETUP === */
+	/* === SLIDESHOW SETUP === * /
 	function checkAuth() {
         gapi.auth.authorize(
           {
@@ -109,7 +112,7 @@
     }
 
     gapi.auth.authorize({client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-		handleAuthResult);
+		handleAuthResult);*/
 	</script>
 
 
@@ -127,7 +130,7 @@
 		<div class="staff">ON STAFF</div>
 
 		<div id="staff-wrapper">
-			<img class="staff" src="people/Eli Baum2.jpg" alt="Staff Listing">
+			<img class="staff" src="" alt="Staff Listing">
 		</div>
 
 		<div id="slideshow-wrapper">
