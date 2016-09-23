@@ -1,0 +1,111 @@
+@font-face
+{
+	font-family: 'univers';
+	src: url('fonts/universltstdlight.woff') format('woff');
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: 'univers';
+	src: url('fonts/universltstd.woff') format('woff');
+	font-weight: bold;
+}
+
+body
+{
+	font-family: 'univers';
+	background-color: black;
+	color: white;
+
+	margin: 0;
+}
+
+div#main-wrapper
+{
+	display: flex;
+
+	height:100vh;
+}
+
+div#main-wrapper > div
+{
+	flex-basis: 50%;
+}
+
+div#left-wrapper
+{
+
+	display: flex;
+	flex-direction: column;
+
+}
+
+div#date-wrapper
+{
+	padding: 2%;
+	background-color: #598cbd;
+	text-transform: uppercase;
+}
+
+div#date-wrapper > #day
+{
+	font-size: 400%;
+}
+
+div#date-wrapper > #calendar-date
+{
+	font-size: 200%;
+}
+
+div.staff
+{
+	background-color: #555f7a;
+	font-size: 200%;
+	padding: 2%;
+	font-weight: bold;
+}
+
+img.staff
+{
+	max-width: 100%;
+}
+
+div#staff-wrapper
+{
+	background-color: #c1e8fb;
+}
+
+div#slideshow-wrapper
+{
+	background-color: black; /*#555f7a;*/
+
+	flex-grow: 1;
+	position: relative;
+
+	overflow: hidden;
+}
+
+img.slideshow
+{
+	position: absolute;
+	max-height: 100%;
+	max-width: 100%;
+
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+div#calendar-padding
+{
+	padding: 1%;
+	background-color: #598cbd;
+	color: white;
+}
+
+.fc-unthemed .fc-today
+{
+	background-color: white !important;
+}
