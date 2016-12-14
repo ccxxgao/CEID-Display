@@ -1,0 +1,122 @@
+@font-face
+{
+	font-family: 'univers';
+	src: url('fonts/universltstdlight.woff') format('woff');
+	font-weight: normal;
+}
+@font-face
+{
+	font-family: 'univers';
+	src: url('fonts/universltstd.woff') format('woff');
+	font-weight: bold;
+}
+
+body
+{
+	font-family: 'univers';
+	background-color: #598cbd;
+	color: white;
+	margin: 0;
+	cursor: none !important;
+}
+
+div#main-wrapper
+{
+	display: flex;
+	height:100vh;
+}
+
+div#main-wrapper > div
+{
+	width: 50%;
+}
+
+div#left-wrapper
+{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+div#date-wrapper
+{
+	padding: 2%;
+	text-transform: uppercase;
+}
+
+div#date-wrapper > #day
+{
+	font-size: 400%;
+}
+
+div#date-wrapper > #calendar-date
+{
+	font-size: 200%;
+}
+
+div.staff
+{
+	background-color: #555f7a;
+	font-size: 200%;
+	padding: 2%;
+	font-weight: bold;
+	margin-left: 1%;
+}
+
+img.staff
+{
+	max-width: 100%;
+}
+
+div#staff-wrapper
+{
+	background-color: #c1e8fb;
+	margin-left: 1%;
+}
+
+div#slideshow-wrapper
+{
+	position: relative;
+	height: 100%;
+}
+
+img.slideshow
+{	
+	max-width: 95%;
+	max-height: 95%;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+div#calendar-padding
+{
+	padding: 1%;
+	color: white;
+	position: relative;
+	height: 95%;
+}
+
+div#calendar
+{
+	overflow:hidden;
+	position: absolute;
+	margin: auto;
+	top: 3%;
+	bottom: 2%;
+	left: 1%;
+	right: 1%;
+}
+
+.fc-unthemed .fc-today
+{
+	background-color: white !important;
+}
+
+.fc-left > h2
+{
+	font-size: 200%;
+}

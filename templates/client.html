@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CEID Front Display</title>
+
+	<link rel="stylesheet" href="static/style.css">
+	<link href='static/fullcalendar-3.0.0/fullcalendar.css' rel='stylesheet' />
+
+
+	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+
+	<script src='static/fullcalendar-3.0.0/lib/moment.min.js'></script>
+	<script src='static/fullcalendar-3.0.0/lib/jquery.min.js'></script>
+	<script src='static/fullcalendar-3.0.0/fullcalendar.min.js'></script>
+	<script src='static/fullcalendar-3.0.0/gcal.js'></script>
+	<script>
+	$(document).ready(function()
+	{
+		var m = moment(); // get current time
+
+		$("div#day").text(m.format("dddd"));
+
+		$("div#calendar-date").text(m.format("MMMM D, Y"));
+
+		$("img.staff").attr("src", "/static/people/" + m.day() + ".png");
+
+		$("#slideshow-wrapper > img:gt(0)").hide();
+		
+		n_images = {{images|length}};
+		
+		n = 1
+
+		setInterval(function() { 
+			if(n <= 1)
+			{
+				$('#img1').show();
+				$('#img' + n_images).hide();
+			}
+			else
+			{
+				$('#img' + n).show();
+				$('#img' + (n - 1)).hide();
+			}
+			n++;
+			if(n > n_images)
+			{
+				n = 1;
+			}
+		},  8000);
+
+		/* === CALENDAR SETUP === */
+		$('#calendar').fullCalendar({
+	        googleCalendarApiKey: 'AIzaSyBBUVw5qT6Umqzc6MBBJK1Ew2X6hz9zTVA',
+	        eventSources: [
+		        {
+		            googleCalendarId: 'yale.edu_v5a8sdqrnsu6j112cckp6t3iu4@group.calendar.google.com',
+		            color: '#4165ac'
+		        },
+		        {
+		        	googleCalendarId: 'yale.edu_tp5hu0imtdjbt39qnim2kd0dv0@group.calendar.google.com',
+		        	color: '#7F7F7F'
+		        },
+		        {
+		        	googleCalendarId: 'yale.edu_pj57k5d89s4ir70v87jjlps7oo@group.calendar.google.com',
+		        	color: '#5E557A'
+		        }
+		    ],
+		    header: {
+		    	left: 'title',
+		    	center: '',
+		    	right: ''
+		    },
+		    titleFormat: '[SCHEDULE]',
+		    allDaySlot: false,
+		    defaultView: 'agendaDay',
+		    nowIndicator: true,
+		    columnFormat: ' ',
+		    minTime: "06:00",
+
+
+		    /* page reloads during day
+		     * each time it does, auto-scroll
+		     *
+		     * offset by two hours so that we can see a bit of the past
+		     */
+		    //scrollTime: m.subtract(2, 'hour').format("HH:mm:ss"),
+
+		    height: "parent",
+		    contentHeight: "auto",
+
+	    });
+
+
+	    /* === AUTO RELOAD SETUP === */
+	    /* Page should update every day at midnight.
+	     * On load, compute time until mdinight, and set reload handler.
+	     */
+	    var timeUntilMidnight = moment("0000","HHmm") 	// midnight today
+	    							.add(1, "day") 		// midnight tomorrow
+	    							.diff(moment()) 	// difference from now
+
+	    // location.reload(true) forces reload (i.e. no cache);
+	    setTimeout(function() {location.reload(true)}, timeUntilMidnight);
+	});
+	</script>
+
+
+</head>
+
+<body>
+<div id="main-wrapper">
+
+	<div id="left-wrapper">
+		<div id="date-wrapper">
+			<div class="date" id="day"></div>
+			<div class="date" id="calendar-date"></div>
+		</div>
+
+		<div class="staff">ON STAFF</div>
+
+		<div id="staff-wrapper">
+			<img class="staff" src="" alt="Staff Listing">
+		</div>
+
+		<div id="slideshow-wrapper">
+			{% for image in images %} <img class="slideshow" id="img{{loop.index}}" src="{{image}}">
+			{% endfor %}
+		</div>
+	</div>
+
+	<div id="calendar-padding"><div id="calendar"></div></div>
+</div>
+
+</body>
+</html>
