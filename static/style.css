@@ -57,8 +57,9 @@ div#date-wrapper > #calendar-date
 div#date-wrapper > #time
 {
 	float: right;
-	font-size: 8em;
+	font-size: 7em;
 	overflow-x: visible;
+	height: 0;
 }
 
 div.staff
