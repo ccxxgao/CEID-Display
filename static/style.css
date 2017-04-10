@@ -64,6 +64,7 @@ div#date-wrapper > #time
 
 div#date-wrapper > #time-padding
 {
+	float: right;
 	font-size: 2em;
 }
 
