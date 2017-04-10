@@ -54,7 +54,7 @@ div#date-wrapper > #calendar-date
 	font-size: 2em;
 }
 
-div#time-wrapper
+/*div#time-wrapper
 {
 	text-align: right;
 	float: right;
@@ -71,6 +71,15 @@ div#time-wrapper > #time
 	font-size: 4em;
 	overflow-x: visible;
 	height: 0 !important;
+}
+*/
+
+div#date-wrapper > #time
+{
+	font-size: 4em;
+	overflow-x: visible;
+	height: 0 !important;
+	float: right;
 }
 
 div.staff
