@@ -102,6 +102,14 @@
 
 	    // location.reload(true) forces reload (i.e. no cache);
 	    setTimeout(function() {location.reload(true)}, timeUntilMidnight);
+
+	    function updateClock()
+	    {
+	    	$("#time").text(moment().format("h:mm a"));
+	    }
+
+	    setInterval(updateClock, 15000);
+	    updateClock();
 	});
 	</script>
 
@@ -117,7 +125,7 @@
 				<div class="date" id="time-padding">&nbsp;</div>
 				<div class="date" id="time">3:18 PM</div>
 			</div> -->
-			<div class="date" id="time">3:18 PM</div>
+			<div class="date" id="time"></div>
 			<div class="date" id="day"></div>
 			<div class="date" id="calendar-date"></div>
 
