@@ -54,18 +54,22 @@ div#date-wrapper > #calendar-date
 	font-size: 2em;
 }
 
-div#date-wrapper > #time
+div#time-wrapper
 {
+	text-align: right;
 	float: right;
+}
+
+div#time-wrapper > #time-padding
+{
+	font-size: 2em;
+}
+
+div#time-wrapper > #time
+{
 	font-size: 4em;
 	overflow-x: visible;
 	height: 0 !important;
-}
-
-div#date-wrapper > #time-padding
-{
-	float: right;
-	font-size: 2em;
 }
 
 div.staff
