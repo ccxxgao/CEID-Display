@@ -57,9 +57,14 @@ div#date-wrapper > #calendar-date
 div#date-wrapper > #time
 {
 	float: right;
-	font-size: 7em;
+	font-size: 4em;
 	overflow-x: visible;
 	height: 0 !important;
+}
+
+div#date-wrapper > #time-padding
+{
+	font-size: 2em;
 }
 
 div.staff
