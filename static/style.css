@@ -58,6 +58,7 @@ div#time-wrapper
 {
 	text-align: right;
 	float: right;
+	padding: 2%;
 }
 
 div#time-wrapper > #time-padding
