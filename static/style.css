@@ -46,18 +46,24 @@ div#date-wrapper
 
 div#date-wrapper > #day
 {
-	font-size: 400%;
+	font-size: 4em;
 }
 
 div#date-wrapper > #calendar-date
 {
-	font-size: 200%;
+	font-size: 2em;
+}
+
+div#date-wrapper > #time
+{
+	float: right;
+	font-size: 6em;
 }
 
 div.staff
 {
 	background-color: #555f7a;
-	font-size: 200%;
+	font-size: 2em;
 	padding: 2%;
 	font-weight: bold;
 	margin-left: 1%;
@@ -118,5 +124,5 @@ div#calendar
 
 .fc-left > h2
 {
-	font-size: 200%;
+	font-size: em;
 }
