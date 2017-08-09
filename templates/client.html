@@ -7,13 +7,13 @@
 	<link rel="stylesheet" href="static/style.css">
 	<link href='static/fullcalendar-3.0.0/fullcalendar.css' rel='stylesheet' />
 
-
 	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 
 	<script src='static/fullcalendar-3.0.0/lib/moment.min.js'></script>
 	<script src='static/fullcalendar-3.0.0/lib/jquery.min.js'></script>
 	<script src='static/fullcalendar-3.0.0/fullcalendar.min.js'></script>
 	<script src='static/fullcalendar-3.0.0/gcal.js'></script>
+
 	<script>
 	$(document).ready(function()
 	{
@@ -26,12 +26,12 @@
 		$("img.staff").attr("src", "/static/people/" + m.day() + ".png");
 
 		$("#slideshow-wrapper > img:gt(0)").hide();
-		
+
 		n_images = {{images|length}};
-		
+
 		n = 1
 
-		setInterval(function() { 
+		setInterval(function() {
 			if(n <= 1)
 			{
 				$('#img1').show();
@@ -125,9 +125,54 @@
 				<div class="date" id="time-padding">&nbsp;</div>
 				<div class="date" id="time">3:18 PM</div>
 			</div> -->
-			<div class="date" id="time"></div>
-			<div class="date" id="day"></div>
-			<div class="date" id="calendar-date"></div>
+			<div class="date" id="time">
+				<script>
+				var currentTime = new Date(),
+			      hours = currentTime.getHours(),
+			      minutes = currentTime.getMinutes();
+
+				if (minutes < 10) {
+				 minutes = "0" + minutes;
+			  }
+
+				var suffix = "AM";
+				if (hours >= 12) {
+			    suffix = "PM";
+			    hours = hours - 12;
+				}
+				if (hours == 0) {
+				 hours = 12;
+				}
+
+				document.write(hours + ":" + minutes + " " + suffix)
+</script>
+			</div>
+			<div class="date" id="day">
+<script>
+ var currentDay = new Date(),
+	weekday = currentDay.getDay();
+
+if (weekday == 0){document.write("Sunday")}
+if (weekday == 1){document.write("Monday")}
+if (weekday == 2){document.write("Tuesday")}
+if (weekday == 3){document.write("Wednesday")}
+if (weekday == 4){document.write("Thursday")}
+if (weekday == 5){document.write("Friday")}
+if (weekday == 6){document.write("Saturday")}
+
+</script>
+
+			</div>
+			<div class="date" id="calendar-date">
+				<script>
+				var currentDate = new Date(),
+						day = currentDate.getDate(),
+						month = currentDate.getMonth() + 1,
+						year = currentDate.getFullYear();
+
+				document.write(day + "/" + month + "/" + year)
+</script>
+			</div>
 
 		</div>
 
